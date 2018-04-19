@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Border</title>
+<style>
+
+	p {
+		text-align: center;
+		border-width: 10px;
+		border-color: #00f;
+		width: 400px;
+	}
+	
+	div {
+		width: 500;
+	}
+	
+	.box1 {
+		border-style: none;
+	}
+	
+	.box2 {
+		border-style: hidden;
+	}
+	
+	.box3 {
+		border-style: solid;
+	}
+	
+	.box4 {
+		border-style: double;
+	}
+	
+	.box5 {
+		border-style: ridge;
+	}
+	
+	.box6 {
+		border-style: groove;
+	}
+	
+	.box7 {
+		border-style: dotted;
+	}
+	
+	.box8 {
+		border-style: dashed;
+	}
+	
+	.box9 {
+		border: 10px inset #0f0;
+	}
+	
+	.box10 {
+		border: 20px outset #0f0;
+	}
+	
+	.div1 {
+		border: 10px solid #b00;
+	}
+	
+	.div2 {
+		border: 10px solid #b0f;
+		height: 100px;
+		text-align: center;
+	}
+
+	.div3 {
+		border-width: 10px 20px 30px 0px !important;
+		border: 10px solid #ff0;
+	}
+
+</style>
+</head>
+<body>
+	<p class="box1">none</p>
+	<p class="box2">hidden</p>
+	<p class="box3">solid</p>
+	<p class="box4">double</p>
+	<p class="box5">ridge</p>
+	<p class="box6">groove</p>
+	<p class="box7">dotted</p>
+	<p class="box8">dashed</p>
+	<p class="box9">inset</p>
+	<p class="box10">outset</p>
+	
+	<div class="div1">
+		<p>border 1</p>	
+	</div>
+	
+	<div class="div2">
+		<p>border 2</p>	
+	</div>
+	
+	<div class="div3">
+		<p>border 3</p>	
+	</div>
+
+</body>
+</html>
