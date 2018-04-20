@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Float</title>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	#container {
+		width: 500px;
+		margin: 10px auto;
+		padding: 10px;
+		border: 5px solid #855;
+		background: #fdd;
+		overflow: hidden;
+		/* floating children divs () are now recognized in #container */
+		/* hidden or auto */
+	}
+	h1 {
+		padding-bottom: 30px;
+	}
+	.greentea {
+		width: 200px;
+		padding: 15px;
+		background: #dda;
+		float: right;
+	}
+	.coffee {
+		width: 200px;
+		padding: 15px;
+		background: #ba7;
+		float: left;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+		<h1>Coffee and Green tea</h1>
+		<div class="coffee">
+			Coffee is a plant and the name of the drink that is made from this plant.
+			The coffee plant is a bush or tree that can grow up to ten meters high, but is usually cut shorter.
+			Coffee plants originally grew in Africa, and now also grow in South America, Central America and Southeast Asia.
+			They are an important crop for the economies of many countries.
+		</div>
+		<div class="greentea">
+			The drink green tea is a "true" tea.
+			It comes from the plant species Camellia sinensis.
+			Green tea is a tea that has undergone little oxidation while it was processed.
+			Green tea is popular in China, Taiwan, Hong Kong, Japan, Korea, and the Middle East.
+			Recently it has been drunk more widely in the West, where usually black tea is consumed.
+		</div>
+	</div>
+</body>
+</html>
