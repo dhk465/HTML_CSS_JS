@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.bbs {
+	width: 260px;
+	border: 2px solid #777;
+	padding: 10px;
+	position: relative;
+}
+
+h2 {
+	color: #36f;
+	margin-bottom: 10px;
+	left: 10px;
+	top: 10px;
+}
+li {
+	height: 18px;
+	padding-left: 10px;
+	background: url(../img/arrow.gif) no-repeat 0% 70%;
+}
+
+li a:hover {
+	text-decoration: underline;
+	color: #f00;
+}
+
+p {
+	position: absolute;
+	right: 10px;
+	top: 1em;
+}
+
+p a {
+	text-decoration: underline;
+}
+
+p a:hover {
+	text-decoration: none;
+}

@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+h2 {
+	color: red;
+}
+a:hover {
+	text-decoration: underline;
+}

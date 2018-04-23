@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+header {
+	position: relative;
+	height: 150px;
+	border: 1px solid #f00;
+	overflow: hidden;
+}
+hgroup {
+	position: absolute;
+	left: 5px;
+	top: 10px;
+}
+li {
+	float: left;
+}
+#a {
+	position: absolute;
+	right: 0;
+	top: 3px;
+	border: 1px solid #000;
+}
+#a ul li {
+	padding: 3px;
+	border-right: 1px solid #000;
+	background: #ccc;
+}
+#a ul li.no-border {
+	border-right: 1px solid #fff;
+}
+#a ul li a{
+	background: #fff;
+}
+#a ul li a:hover{
+	background: #777;
+}

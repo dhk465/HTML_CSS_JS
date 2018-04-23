@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+#header {
+	width: 1000px;
+	height: 80px;
+	margin: 0 auto;
+	border: 1px solid #000;
+	position: relative;
+	/* recognizes a child when the child's position is absolute */
+	/* the absolute position (0, 0) inside #header */
+}
+
+li {
+	float: left;
+}
+ul {
+	overflow: hidden;
+}
+p {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+p.a {
+	position: absolute;
+	left: 5px;
+	top: 7px;
+}
+p.d {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+.b {
+	position: absolute;
+	left: 350px;
+	top: 10px;
+}
+.c {
+	position: absolute;
+	left: 225px;
+	top: 40px;
+}
