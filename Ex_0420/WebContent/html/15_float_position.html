@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Float positions</title>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	#wrap {
+		margin: 0 auto;
+		width: 500px;
+		background: #000;
+		border: 5px solid #f00;
+	}
+	#header {
+		width: 500px;
+		background: #09f;
+		text-align: center;
+		padding: 10px 0;
+		color: #fff;
+		font-weight: bold;
+	}
+	#content {
+		width: 500px;
+		background: #ccc;
+		overflow: hidden;
+	}
+	#left {
+		float: left;
+		width: 180px;
+		background: #fcf;
+		padding: 10px; 	
+		margin: 25px;
+	}
+	#right {
+		float: right;
+		width: 180px;
+		background: #fcf;
+		padding: 10px;
+		margin: 25px;
+	}
+	#footer {
+		width: 500px;
+		background: #33f;
+		text-align: center;
+		color: #fff;
+		padding: 10px 0;
+	}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<p>Black Hole: a hungry pit of death</p>
+		</div>
+		<div id="content">
+			<div id="left">
+				A black hole is a region of spacetime exhibiting such strong gravitational effects that nothing—not even particles and electromagnetic radiation such as light—can escape from inside it.
+			</div>
+			<div id="right">
+				A black hole is a region of spacetime exhibiting such strong gravitational effects that nothing—not even particles and electromagnetic radiation such as light—can escape from inside it.
+			</div>
+		</div>
+		<div id="footer">
+			<p>Copyright &copy; DHK. All rights reserved.</p>
+		</div>
+	</div>
+</body>
+</html>
