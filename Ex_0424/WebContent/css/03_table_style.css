@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+body {
+	background: #333;
+	color: #fff;
+}
+table {
+	width: 90%;
+}
+table, th, td {
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+th, td {
+	padding: 15px;
+}
+th {
+	border-top: 1px solid #fff;
+}
+th:nth-child(1), th:nth-child(2), th:nth-child(3) {
+	border-right: 1px solid #fff;
+}
+th, tr {
+	border-bottom: 1px solid #fff;
+}
+td:nth-child(1), td:nth-child(2), td:nth-child(3) {
+	border-right: 1px solid #fff;
+}
+td {
+	text-align: center;
+}

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+table, th, td {
+	border-collapse: collapse;
+	border: 1px solid #777;
+}
+table {
+	width: 900px;
+	height: 450px;
+	margin: 0 auto;
+}
+caption {
+	font-size: 25px;
+	fornt-weight: bold;
+	margin-bottom: 10px;
+}
+th, td {
+	padding: 15px 20px;
+	width: 100px;
+}
+thead th {
+	height: 3em;
+	background: #0080ff;
+	color: #fff;
+	border-bottom: 7px solid #000;
+}
+tbody tr {
+	background: #a6f7ba;
+}

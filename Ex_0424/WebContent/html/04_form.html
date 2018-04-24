@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form Tag</title>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+	<!-- action: url to send the data to
+		 method: way to send the data (get: public, post: private)-->
+	<form action="03_table_style.html" method="post">
+		<fieldset>
+			<legend>Registration</legend>
+			<p>
+				<label for="m_id">Login ID: </label>
+				<input type="text" size="12" id="t_id" name="n_id"/>
+			</p>
+			<p>
+				<label for="m_pw">Password: </label>
+				<input type="text" size="12" id="t_pw" name="n_pw"/>
+			</p>
+			<p>
+				Subscribe to mailing:
+				<input type="radio" value="y" name="r_subs"/> Yes
+				<input type="radio" value="n" name="r_subs"/> No
+			</p>
+			<p>
+				Interests:
+				<input type="checkbox" value="html" name="c_interests"/> HTML
+				<input type="checkbox" value="css" name="c_interests"/> CSS
+				<input type="checkbox" value="js" name="c_interests"/> JavaScript
+			</p>
+			<div class="g-recaptcha" data-sitekey="your_site_key">
+			</div>
+			<p>
+				<input type="submit" value="Register">
+				<input type="reset" value="Reset">
+				<input type="button" value="Back">
+			</p>
+		</fieldset>
+	</form>
+</body>
+</html>

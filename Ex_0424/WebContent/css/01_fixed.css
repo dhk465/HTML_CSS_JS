@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+#header {
+	width: 200px;
+	position: fixed;
+	left: 50px;
+	top: 30px;
+}
+#header p {
+}
+#header ul {
+	width: 150px;
+	margin: 10px 0;
+}
+#header ul li {
+	margin: 3px 0;
+}
+#header ul li a{
+	display: block;
+	background: #4d00bf;
+	color: #fff;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	font-weight: bold;
+}
+#header ul li a:hover{
+	background: #d7d7ff;
+}
+
+#container {
+	width: 600px;
+	height: 1500px;
+	background: #d7d7ff;
+	margin-left: 250px;
+}
+
+#footer {
+	width: 1000px;
+	padding: 5px;
+	position: fixed;
+	bottom: 0;
+	font-size: 12px;
+	background: #000;
+	color: #fff;
+}
+
+img {
+	display: block;
+}
