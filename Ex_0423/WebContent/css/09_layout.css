@@ -16,21 +16,22 @@ li {
 }
 #a {
 	position: absolute;
-	right: 0;
+	right: 3px;
 	top: 3px;
 	border: 1px solid #000;
 }
 #a ul li {
 	padding: 3px;
 	border-right: 1px solid #000;
-	background: #ccc;
 }
 #a ul li.no-border {
 	border-right: 1px solid #fff;
 }
 #a ul li a{
 	background: #fff;
+	color: #000;
 }
 #a ul li a:hover{
 	background: #777;
+	color: #fff;
 }
