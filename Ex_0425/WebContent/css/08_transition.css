@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+
+#box {
+	width: 100px;
+	height: 100px;
+	background: #aaf;
+	border-radius: 0;
+	transition-property: background, border-radius;
+	transition-duration: 1s;
+	transition-delay: 2s;
+}
+#box:hover {
+	background: #f00;
+	border-radius: 50px;
+}

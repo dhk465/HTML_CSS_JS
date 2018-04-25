@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+input[type=text] {
+	background: #f00;
+}
+input[type=password] {
+	background: #00f;
+}
+li[class=a] {
+	background: #ff8;
+}

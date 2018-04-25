@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+
+#box {
+	width: 100px;
+	height: 100px;
+	background: #f00;
+	border-radius: 0;
+	transition-property: background, border-radius;
+	-ms-transition-property: background, border-radius; /* IE compatibility */
+	-webkit-transition-property: background, border-radius; /* Chrome & Safari compatibility */
+	-moz-transition-property: background, border-radius; /* Firefox compatibility */
+	-o-transition-property: background, border-radius; /* Opera compatibility */
+}
+#box:hover {
+	background: #00f;
+	border-radius: 50px;
+}

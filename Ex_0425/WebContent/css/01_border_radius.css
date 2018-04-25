@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+h1 {
+	border: 2px solid red;
+	width: 200px;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	text-align: center;
+	border-radius: 0.5em 1em 1.5em 2em;
+} /* clockwise pointers around the edges */

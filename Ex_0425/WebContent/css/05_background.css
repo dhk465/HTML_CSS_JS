@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+div {
+	width: 1200px;
+	height: 900px;
+	border: 1px solid #000;
+	background: url(../img/fall4.jpg) no-repeat;
+}
+
+.box1 {
+	background-size: auto auto; /* original size */
+}
+.box2 {
+	background-size: 300px auto; /* gives the height a value relative to the width */
+}
+.box3 {
+	background-size: 1200px 900px;
+}
+.box4 {
+	background-size: contain; /* takes the size of the container but keeps the image proportion */
+}
+.box5 {
+	background-size: cover; /* takes the size of the container without taking the image size into consideration */
+}

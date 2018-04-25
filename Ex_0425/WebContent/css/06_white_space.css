@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+
+.normal {
+	white-space: normal;
+}
+.nowrap {
+	white-space: nowrap;
+}
+.pre {
+	white-space: pre;
+}
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

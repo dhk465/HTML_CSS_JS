@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+p {
+	width: 150px;
+	padding: 20px;
+	border: 1px solid #777;
+	text-align: center;
+	box-shadow: inset -5px -10px 15px 5px rgba(70, 70, 70, 0.5);
+	/* box-shadow: inset x-offset y-offset blur-intensity thickness RGBa() */
+	cursor: pointer;
+}
