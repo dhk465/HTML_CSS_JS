@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Array</title>
+<script type="text/javascript">
+	let value = new Array(3);
+	value[0] = 10;
+	value[1] = 20;
+	value[2] = 30;
+	for (var i = 0; i < value.length; i++) {
+		document.write(value[i] + `<br>`);
+	}
+	document.write(`<hr>`);
+	let value2 = new Array();
+	let first = [10, 20];
+	let second = [30, 40, 50];
+	value2[0] = first;
+	value2[1] = second;
+	for (var i = 0; i < value2.length; i++) {
+		for (var j = 0; j < value2[i].length; j++) {
+			document.write(`${value2[i][j]}&nbsp;`);
+		}
+		document.write(`<br>`);
+	}
+</script>
+</head>
+<body>
+</body>
+</html>
