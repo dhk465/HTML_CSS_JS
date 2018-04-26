@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#m_div {
+	border:1px solid #f00;
+	width:200px;
+	height:150px;
+	margin-top: 20px;
+	}
+</style>
+<script>
+	let str = ``;
+	function readText(){
+		var result = document.getElementById(`result`);
+		str = result.value;
+		result.value = ``;
+	}
+	
+	function writeText(){
+		var result = document.getElementById(`result`);
+		result.value = str;
+	}
+	
+	function eraseText(){
+		var result = document.getElementById(`result`);
+		result.value = ``;
+	}
+	function setDiv(){
+		var m_div = document.getElementById(`m_div`);
+		m_div.innerHTML = str;
+		
+	}
+</script>
+</head>
+<body>
+	<input type="text" value="" id="result">
+	<input type="button" value="read" onClick="readText();">
+	<input type="button" value="write" onClick="writeText();">
+	<input type="button" value="erase" onClick="eraseText();">
+	<div id="m_div">
+	
+	</div>
+	<input type="button" value="box" onClick="setDiv();">
+</body>
+</html>

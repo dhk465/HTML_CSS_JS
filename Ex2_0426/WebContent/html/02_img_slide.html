@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>an image slide</title>
+		<style type="text/css">
+		
+			a {
+				text-decoration: none;
+			}
+		
+		</style>
+		<script type="text/javascript">
+		
+			let num = 1;
+			function prev() {
+				num--;
+				if (num < 1) {
+					num = 7;
+				}
+				let img = document.getElementById('gallery');
+				img.src = `../img/img${num}.jpg`;
+			}
+			
+			function next() {
+				num++;
+				if (num > 7) {
+					num = 1;
+				}
+				let img = document.getElementById('gallery');
+				img.src = `../img/img${num}.jpg`;
+			}
+		
+		</script>
+	</head>
+	<body>
+	
+		<div>
+			<p>
+				<a href="#" onclick="prev();">
+					<img alt="button to the previous image" src="../img/left_btn.png">
+				</a>
+				<img id="gallery" alt="images" src="../img/img1.jpg" width="300" height="200">
+				<a href="#" onclick="next();">
+					<img alt="button to the next image" src="../img/right_btn.png">
+				</a>
+			</p>
+		</div>
+	
+	</body>
+</html>

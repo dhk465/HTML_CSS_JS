@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+</style>
+<script>
+	function gugu() {
+		let list = ``;
+		let dan = Number(document.getElementById(`dan`).value);
+		for (var i = 1; i < 10; i++) {
+			list += `${dan} x ${i} = ${dan * i}<br>`;
+		}
+		let container = document.getElementById(`container`);
+		container.innerHTML = list;
+	}
+</script>
+</head>
+<body>
+	<p>
+	<input id="dan" type="text">
+	<input type="button" value="list" onClick="gugu();">
+	</p>
+	<div id="container"></div>
+</body>
+</html>
