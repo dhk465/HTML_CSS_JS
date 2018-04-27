@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Three ways to send values to server using Form</title>
+<style type="text/css">
+	table {
+		border-collapse: collapse;
+	}
+	input {
+		border-style: none;
+	}
+</style>
+<script>
+	function check01() {
+		// forms: the array that contains forms in html
+		let f = document.forms[0];
+		let id = f.login.value;
+		let pwd = f.pwd.value;
+		
+		if (id == ``) {
+			alert("Enter your login ID.");
+			f.login.focus();
+			return;
+		}
+		if (pwd == ``) {
+			alert("Enter your password.");
+			f.pwd.focus();
+			return;
+		}
+		
+		f.method = "POST";
+		f.action = "01_calculator.html";
+		f.submit(); // name parameters are sent to the action page
+	}
+	function check02() {
+		let f = document.ff;
+		let id = f.login.value;
+		let pwd = f.pwd.value;
+		
+		if (id == ``) {
+			alert("Enter your login ID.");
+			f.login.focus();
+			return;
+		}
+		if (pwd == ``) {
+			alert("Enter your password.");
+			f.pwd.focus();
+			return;
+		}
+		
+		f.submit();
+	}
+	function check03(ff) {
+		let f = ff;
+		let id = f.login;
+		let pwd = f.pwd;
+		
+		if (id == ``) {
+			alert("Enter your login ID.");
+			f.login.focus();
+			return;
+		}
+		if (pwd == ``) {
+			alert("Enter your password.");
+			f.pwd.focus();
+			return;
+		}
+		
+		f.submit();
+	}
+</script>
+</head>
+<body>
+	<!-- No. 1 -->
+	<form>
+	
+		<table border="1">
+		
+			<tr>
+				<th>Login ID</th>
+				<td><input type="text" name="login"></td>
+			</tr>
+			<tr>
+				<th>Password</th>
+				<td><input type="password" name="pwd"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+				<input type="button" value="Form 01" onclick="check01();"></td>
+			</tr>
+		
+		</table>
+	
+	</form>
+	
+	<!-- No. 2 -->
+	<form name="ff" method="GET" action="#">
+	
+		<table border="1">
+		
+			<tr>
+				<th>Login ID</th>
+				<td><input type="text" name="login"></td>
+			</tr>
+			<tr>
+				<th>Password</th>
+				<td><input type="password" name="pwd"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+				<input type="button" value="Form 02" onclick="check02();"></td>
+			</tr>
+		
+		</table>
+	
+	</form>
+	
+	<!-- No. 3 -->
+	<form method="GET" action="#">
+	
+		<table border="1">
+		
+			<tr>
+				<th>Login ID</th>
+				<td><input type="text" name="login"></td>
+			</tr>
+			<tr>
+				<th>Password</th>
+				<td><input type="password" name="pwd"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+				<!-- this.form returns its form -->
+				<input type="button" value="Form 03" onclick="check03(this.form);"></td>
+			</tr>
+		
+		</table>
+	
+	</form>
+</body>
+</html>

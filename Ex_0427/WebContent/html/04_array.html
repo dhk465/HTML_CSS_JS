@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script type="text/javascript">
+	window.onload = function(){
+		let year = document.getElementById(`birth_year`);
+		
+		for (var i = 2018; i > 1900; i--) {
+			var option = document.createElement(`option`);
+			option.innerHTML = i;
+			year.appendChild(option);
+		}
+	}
+	
+	// check if it is a leap year
+	
+	let last_day = 31;
+	function check_leap() {
+		let year = document.getElementById(`birth_year`).value;
+		if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)){
+			last_day = 29;
+		} else {
+			last_day = 28;
+		}
+		
+		let month = document.getElementById(`birth_month`);
+		let n = month.length;
+		
+		while (n > 0) {
+			month.remove(0);
+			n--;
+		}
+		
+		for (var i = 1; i <= 12; i++) {
+			var option = document.createElement(`option`);
+			option.innerHTML = i;
+			option.value = i;
+			month.appendChild(option);
+		}
+		
+	}
+	
+	
+		
+</script>
+</head>
+<body>
+	<p>Birth date: 
+		<select id="birth_year" onChange="check_leap();">
+			<option> - YEAR - </option>
+		</select>
+		<select id="birth_month" onChange="monthChange(this.value);">
+			<option> - MONTH - </option>
+		</select>
+	</p>
+	
+</body>
+</html>

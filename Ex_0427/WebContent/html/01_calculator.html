@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/01_calculator.css">
+<link rel="script" href="../js/01_calculator.js">
+</head>
+<body>
+	<div id="container">
+		<p>
+			Number 1: <input type="text" id="first_num">
+		</p>
+		<p>
+			Number 2: <input type="text" id="second_num">
+		</p>
+		<hr>
+		<p>
+			<input type="button" value="+" onClick="calculate('add');">
+			<input type="button" value="−" onClick="calculate('subtract');">
+			<input type="button" value="×" onClick="calculate('multiply');">
+			<input type="button" value="÷" onClick="calculate('divide');">
+		</p>
+		<hr>
+		<div> Result: </div> <div id="result"></div>
+	</div>
+</body>
+</html>

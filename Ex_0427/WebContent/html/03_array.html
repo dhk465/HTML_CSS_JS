@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dynamic application of arrays</title>
+<script type="text/javascript">
+	let sido_array = ["Seoul", "Daejeon", "Daegu", "Busan"];
+	
+	// called when the current html is loaded
+	window.onload = function() {
+		let sido = document.getElementById(`sido`);
+		// using for-loop, add options to sido
+		for (var i = 0; i < sido_array.length; i++){
+			// <option> tag
+			var option = document.createElement(`option`);
+			option.innerHTML = sido_array[i];
+			sido.appendChild(option);
+		}
+	}
+</script>
+</head>
+<body>
+	<p>
+		Region:
+		<select id="sido">
+			<option> - Choose your region - </option>
+		</select>
+	
+	</p>
+</body>
+</html>
