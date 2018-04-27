@@ -4,24 +4,47 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+	#container {
+		border: 1px solid #000;
+		width: 300px;
+		height: 200px;
+		text-align: center	
+	}
 </style>
 <script>
-	function gugu() {
+	function multiply() {
 		let list = ``;
 		let dan = Number(document.getElementById(`dan`).value);
 		for (var i = 1; i < 10; i++) {
 			list += `${dan} x ${i} = ${dan * i}<br>`;
 		}
 		let container = document.getElementById(`container`);
-		container.innerHTML = list;
+		/* if (dan.trim() == ``) {
+			alert("An input is needed.");
+			alert("값을 입력하세요");
+		} */
+		if (dan > 1 && dan < 10 && Number.isInteger(dan)) {
+			container.innerHTML = list;
+		} else {
+			alert("Input has to be an integer from 2 to 9.");
+			alert("2과 9사이의 정수만을 입력하십시오.");
+		}
+	}
+	let bool_shown = true;
+	function hideText() {
+		bool_shown = !bool_shown;
+		document.getElementById(`btn_hide`).value = bool_shown ? `hide` : `show`;
+		document.getElementById(`container`).style.display = bool_shown ? `block` : `none`;
 	}
 </script>
 </head>
 <body>
 	<p>
-	<input id="dan" type="text">
-	<input type="button" value="list" onClick="gugu();">
+		Multiples of: <input id="dan" type="text">
+		<input type="button" value="list" onClick="multiply();">
+		<input type="button" value="hide" id="btn_hide" onClick="hideText();">
 	</p>
+	<hr>
 	<div id="container"></div>
 </body>
 </html>
