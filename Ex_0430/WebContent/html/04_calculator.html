@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(function() {
+		/* $(`#add`).click(function () {
+			let num01 = Number($(`#num_01`).val());
+			let num02 = Number($(`#num_02`).val());
+			$(`#result`).val(num01 + num02);
+		}); */
+		
+		$(`#add, #sub, #mul, #div`).click(function(){
+			cal($(this));
+		});
+		
+	});
+	
+	function cal(obj) {
+		console.log(obj.val());
+
+		let num01 = Number($(`#num_01`).val());
+		let num02 = Number($(`#num_02`).val());
+		
+		let result = 0;
+		
+		switch (obj.val()) {
+		case `Add`:
+			result = num01 + num02;
+			break;
+		case `Subtract`:
+			result = num01 - num02;
+			break;
+		case `Multiply`:
+			result = num01 * num02;
+			break;
+		case `Divide`:
+			result = num01 / num02;
+			break;
+		}
+		
+		$(`#result`).val(result);
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="num_01" size="5">
+	<input type="text" id="num_02" size="5">
+	<input type="text" id="result"><br>
+	<input type="button" id="add" value="Add">
+	<input type="button" id="sub" value="Subtract">
+	<input type="button" id="mul" value="Multiply">
+	<input type="button" id="div" value="Divide">
+</body>
+</html>

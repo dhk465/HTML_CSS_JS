@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
-<script type="text/javascript">
+<script>
 	window.onload = function(){
 		let year = document.getElementById(`birth_year`);
 		
@@ -36,12 +36,47 @@
 		for (var i = 1; i <= 12; i++) {
 			var option = document.createElement(`option`);
 			option.innerHTML = i;
-			option.value = i;
 			month.appendChild(option);
 		}
 		
 	}
 	
+	function change_month ( month ) {
+		
+		let m;
+		
+		switch( Number(month) ){
+		
+		case 1: case 3: case 5: case 7:
+		case 8: case 10: case 12:
+			m = 31;
+			break;
+			
+		case 2:
+			m = last_day;
+			break;
+			
+		case 4: case 6: case 9: case 11:
+			m = 30;
+			break;
+
+		}
+	
+		let day = document.getElementById(`birth_day`);
+		let n = day.length;
+		
+		while (n > 0) {
+			day.remove(0);
+			n--;
+		}
+		
+		for (var i = 1; i <= m; i++) {
+			var option = document.createElement(`option`);
+			option.innerHTML = i;
+			day.appendChild(option);
+		}
+		
+	}
 	
 		
 </script>
@@ -51,8 +86,11 @@
 		<select id="birth_year" onChange="check_leap();">
 			<option> - YEAR - </option>
 		</select>
-		<select id="birth_month" onChange="monthChange(this.value);">
+		<select id="birth_month" onChange="change_month(this.value);">
 			<option> - MONTH - </option>
+		</select>
+		<select id="birth_day">
+			<option> - DAY - </option>
 		</select>
 	</p>
 	

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>innerHTML in jQuery</title>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+	$(function(){
+		$(`#btn_01`).click(function(){
+			let a = $(`#a`).html();
+			alert(a);
+			$(`#a`).html(``);
+		});
+		$(`#btn_02`).click(function(){
+			let b = $(`#b`).html();
+			$(`#b`).html(`But the fire is so delightful`);
+		});
+		$(`.btn_03`).click(function(){
+			let b = $(`p`).html();
+			$(`p`).html(`Searching for someone to fix my life`);
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="B01" id="btn_01">
+	<input type="button" value="B02" id="btn_02">
+	<input type="button" value="B03" class="btn_03">
+	
+	<div id="a">Hello World!</div>
+	<div id="b">The weather outside is frightful.</div>
+	<p>Dirty Computer</p>
+</body>
+</html>

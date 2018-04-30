@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Click Event</title>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(function() {
+		// detects the click on the button (id=btn_01)
+		$(`#btn_01`).click(function(){
+			alert(`Button 1 clicked`);
+		});
+		$(`#btn_02`).click(function(){
+			let msg = $(`#msg`).val();
+			alert(msg);
+			$(`#msg`).val(`message value changed`);
+			$(this).val(`button value changed`);
+		});
+		$(`#btn_03`).click(my_click);
+		$(`#btn_04`).click(click);
+	});
+	
+	function my_click() {
+		alert(`Button 3 clicked`);
+	}
+	
+	let click = function() {
+		alert(`Button 4 clicked`);
+	}
+</script>
+</head>
+<body>
+	Message: <input type="text" id="msg">
+	<br>
+	<input type="button" id="btn_01" value="Button 1">
+	<input type="button" id="btn_02" value="input message">
+	<input type="button" id="btn_03" value="Button 3">
+	<input type="button" id="btn_04" value="Button 4">
+</body>
+</html>
