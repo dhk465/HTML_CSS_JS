@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+			
+			function myclick(f){
+				
+				var num01 = f.num01.value.trim();
+				var num02 = f.num02.value.trim();
+				
+				// integer check
+				var num_pattern = /^[0-9]*$/;
+				if(!num_pattern.test(num01)){
+					alert("Only an integer can be computed.");
+					f.num01.value = "";
+					f.num01.focus();
+					return;
+				}
+				if(!num_pattern.test(num02)){
+					alert("Only an integer can be computed.");
+					f.num02.value = "";
+					f.num02.focus();
+					return;
+				}
+				if(num02 == 0) {
+					alert("Zero cannot be Number 2.");
+					f.num02.value = "";
+					f.num02.focus();
+					return;
+				}
+				
+				f.num01.value = num01;
+				f.num02.value = num02;
+				f.submit();
+			}
+		
+</script>
+</head>
+<body>
+	<form name="ff" action="calc.do">
+		Number 1: <input type="text" name="num01"><br>
+		Number 2: <input type="text" name="num02"><br>
+		<input type="button" value="Compute" onclick="myclick( this.form );">
+	</form>
+</body>
+</html>
