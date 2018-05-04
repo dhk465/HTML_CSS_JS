@@ -39,8 +39,9 @@ public class GreetServlet extends HttpServlet {
 			msg = "こんにちは。";
 		} else if (country.equals("chn")) {
 			msg = "你好.";
+			
 		}
-
+ 
 		// response
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();

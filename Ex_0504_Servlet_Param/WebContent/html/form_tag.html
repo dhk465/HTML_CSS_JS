@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/regexp.js"></script>
+<script>
+	function send(f){
+		let name = f.name.value.trim();
+		let id = f.id.value.trim();
+		let pwd = f.pwd.value.trim();
+		
+		if (name == ``) {
+			alert(`'Name' cannot be empty.`);
+			f.name.focus();
+			return;
+		}
+		
+		if (!reg_id.test(id)) {
+			alert(`a 6-12 letter combination of alphabet and/or numbers has to be used.`);
+			f.id.focus();
+			return;
+		}
+		
+		if (!reg_pwd.test(pwd)) {
+			alert(`a 6-16 letter combination of alphabet, numbers and special characters has to be used.`);
+			f.pwd.focus();
+			return;
+		}
+		
+		f.method = "POST";
+		f.submit();
+		
+	}
+	function cancel(form){
+		form.reset();
+	}
+</script>
+</head>
+<body>
+	<form action="member_reg.do">
+		Name: <input type="text" name="name" placeholder="Put your name here"><br>
+		Login: <input type="text" name="id" placeholder="6-12 letters and/or numbers"><br>
+		Password: <input type="password" name="pwd" placeholder="6-16 letters, numbers and/or special characters"><br>
+		
+		<!-- radio buttons -->
+		Gender:	<input type="radio" name="gender" value="not specified" checked="checked">Not Specified
+				<input type="radio" name="gender" value="male">Male
+				<input type="radio" name="gender" value="female">Female<br>
+		
+		<!-- check boxes -->
+		Interests:	<input type="checkbox" name="hobby" value="books">Books
+					<input type="checkbox" name="hobby" value="movies">Movies
+					<input type="checkbox" name="hobby" value="sports">Sports
+					<input type="checkbox" name="hobby" value="gaming">Gaming
+					
+		<hr>
+		
+		Referrer 1: <input type="text" name="friends"><br>
+		Referrer 2: <input type="text" name="friends"><br>
+		Referrer 3: <input type="text" name="friends"><br>
+		Referrer 4: <input type="text" name="friends"><br>
+		Referrer 5: <input type="text" name="friends"><br>
+		
+		<hr>
+		
+		Blood-type: <select name="blood">
+		
+			<option value="A">type A</option>
+			<option value="B">type B</option>
+			<option value="O">type O</option>
+			<option value="AB">type AB</option>
+		
+		</select>
+		
+		<hr>
+		
+		Description: <br>
+		<textarea rows="5" cols="40" name="desc" placeholder="Describe yourself"></textarea>
+		
+		<br>
+		<br>
+		
+		<input type="button" value="Submit" onclick="send(this.form);">
+		<input type="reset" value="cancel" onclick="cancel(this.form);">
+		
+		<!-- unofficial tags that are not an element of form, e.g. img, cannot have this.form parameter on its function -->
+		
+	</form>
+</body>
+</html>

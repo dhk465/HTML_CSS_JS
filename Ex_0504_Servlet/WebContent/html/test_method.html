@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function send_get(form){
+		form.method = "GET";
+		form.submit();
+	}
+	function send_post(form){
+		form.method = "POST";
+		form.submit();
+	}
+</script>
+</head>
+<body>
+	<form action="life.do">
+		<input type="button" value="request (GET)" onclick="send_get(this.form);">
+		<input type="button" value="request (POST)" onclick="send_post(this.form);">
+	</form>
+</body>
+</html>

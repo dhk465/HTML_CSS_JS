@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function check(f){
+		let jumin = f.jumin.value.trim();
+		let reg_jumin = /^(?:[0-9]{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,1]))-[1-4][0-9]{6}$/;
+
+		if (!reg_jumin.test(jumin)) {
+			alert("주민번호 형식이 올바르지 않습니다.");
+			f.jumin.focus();
+			return;
+		}
+		
+		let year = jumin.substr(0, 2);
+		let century = "19";
+		if (year <= 18) {
+			century = "20";
+		} // doesnt count ppl over 99
+		
+		let age = 2018 - `${century}${year}` + 1;
+		
+		let season;
+		
+		switch (jumin.substr(2,2)) { // 2 more chars from index2 (different from java)
+		case "03": case "04": case "05":
+			season = "봄";
+			break;
+		case "06": case "07": case "08":
+			season = "여름";
+			break;
+		case "09": case "10": case "11":
+			season = "가을";
+			break;
+		case "12": case "01": case "02":
+			season = "겨울";
+			break;
+		} // switch
+		
+		f.year.value = `${century}${year}`;
+		f.age.value = age;
+		f.season.value = season;
+		
+		f.submit();
+	}
+</script>
+</head>
+<body>
+	<form action="jumin.do" method="POST">
+		주민번호: <input type="text" name="jumin" placeholder="123456-1234567">
+		<input type="button" value="확인" onclick="check(this.form);">
+		
+		<input type="hidden" name="year">
+		<input type="hidden" name="age">
+		<input type="hidden" name="season">
+	</form>
+</body>
+</html>

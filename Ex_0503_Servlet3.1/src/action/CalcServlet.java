@@ -21,7 +21,7 @@ public class CalcServlet extends HttpServlet {
 		// response
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
-				
+		
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<title>Calculated results</title>");
@@ -35,6 +35,7 @@ public class CalcServlet extends HttpServlet {
 		out.println("<a href='calc.html'>return to the calculator</a>");
 		out.println("</body>");
 		out.println("</html>");
+		
 	}
 
 }
