@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<!-- JNDI (Java Naming Directory Interface):
+		a reference for connecting to a Database
+		without creating any object -->
+	<Resource
+		auth="Container"
+		name="jdbc/oracle_test"
+		type="javax.sql.DataSource"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		factory="org.apache.commons.dbcp.BasicDataSourceFactory"
+		url="jdbc:oracle:thin:@localhost:1521:xe"
+		username="TEST" password="1111"
+		maxActive="20" maxIdle="10" maxWait="1"/>
+		<!-- maxActive: when the connection time takes 1 sec, for example,
+		the last person amongst 20 users connecting at the same time
+		would take 20 sec to connect. So it readies 20 connections in the first place
+		This is called a DBCP (database connection pool) -->
+</Context>

@@ -1,0 +1,36 @@
+create sequence seq_sungtb_no;
+
+create table sungtb(
+	no number(3) primary key,
+	name varchar2(100) not null,
+	kor number(3) default 0,
+	eng number(3) default 0,
+	mat number(3) default 0
+);
+
+alter table sungtb add constraint ck_kor check(kor between 0 and 100);
+alter table sungtb add constraint ck_eng check(kor between 0 and 100);
+alter table sungtb add constraint ck_mat check(kor between 0 and 100);
+
+insert into sungtb values(seq_sungtb_no.nextVal, '홍길동', 70, 80, 90);
+insert into sungtb values(seq_sungtb_no.nextVal, '이순신', 80, 65, 80);
+insert into sungtb values(seq_sungtb_no.nextVal, '강백호', 48, 63, 75);
+insert into sungtb values(seq_sungtb_no.nextVal, '손오공', 86, 88, 65);
+
+
+-- 생성 또는 이미 존재한다면 갱신하는 뷰 (sungtb_view)를 만듬
+-------------------------------------------------------------
+create or replace view sungtb_view as
+
+select s.*,
+
+(kor + eng + mat) sum,
+round((kor + eng + mat) / 3, 2) avg,
+
+rank() over (order by (kor + eng + mat) desc) rank
+
+from (select * from sungtb) s
+order by no;
+-------------------------------------------------------------
+
+select * from sungtb_view;
