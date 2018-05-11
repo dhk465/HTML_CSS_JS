@@ -1,17 +1,27 @@
 <%@page import="dao.TestDAO"%>
+<%@page import="vo.TestVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <%
 	request.setCharacterEncoding("utf-8");
-	
 	int id = Integer.parseInt(request.getParameter("id"));
+	String name = request.getParameter("name");
+	int kor = Integer.parseInt(request.getParameter("kor"));
+	int eng = Integer.parseInt(request.getParameter("eng"));
+	int mat = Integer.parseInt(request.getParameter("mat"));
 	
-	int res = TestDAO.getInstance().delete(id);
+	TestVO vo = new TestVO();
+	vo.setId(id);
+	vo.setName(name);
+	vo.setKor(kor);
+	vo.setEng(eng);
+	vo.setMat(mat);
 	
-	System.out.println(res);
+	int res = TestDAO.getInstance().update(vo);
 	
 	response.sendRedirect("student.jsp");
+	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
