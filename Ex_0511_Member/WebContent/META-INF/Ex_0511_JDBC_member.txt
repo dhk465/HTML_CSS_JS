@@ -1,0 +1,13 @@
+create sequence seq_member_idx;
+
+create table member (
+	idx number(3) primary key,
+	name varchar2(100) not null unique,
+	id varchar2(100) not null,
+	pwd varchar2(100) not null,
+	email varchar2(100),
+	addr varchar2(200)
+);
+
+insert into member values (seq_member_idx.nextVal, '홍길동', 'hong', '1111', 'hong@naver.com', '서울특별시 관악구');
+insert into member values (seq_member_idx.nextVal, '김길동', 'kimg', '2222', 'kimg@naver.com', '서울특별시 마포구');
