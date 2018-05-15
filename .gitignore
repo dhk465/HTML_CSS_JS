@@ -22,6 +22,8 @@ tomcat
 *.sar
 *.class
 
+*.mp4
+
 # Maven 
 target/
 
