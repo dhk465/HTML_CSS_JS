@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script src="js/httpRequest.js"></script>
+	
+	<script>
+	
+		function send(){
+			
+			var dan = document.getElementById("dan").value;
+			
+			//Ajax로 요청하기 위한 설정
+			var url = "gugudan_ajax.jsp";
+			var param = "dan=" + dan;
+			
+			sendRequest(url, param, resultFn, "GET");
+			
+		}//send()
+	
+		//Ajax로 요청한 결과를 처리하는 콜백함수
+		function resultFn(){
+			
+			console.log(xhr.readyState + " / " + xhr.status);
+			
+			//	xhr.readyState:
+			//	0 = 초기화 오류
+			//	4 = 로드 완료
+			
+			//	xhr.status
+			//	200: 이상없음
+			//	404: 경로없음
+			//	500: 서버에러
+			
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				var data = xhr.responseText;
+				//alert( data );
+				document.getElementById("disp").innerHTML = data;
+			}
+		}
+		
+	</script>
+	
+</head>
+
+<body>
+
+	단 : <input id="dan">
+	<input type="button" value="결과확인" onclick="send();">
+	<br>
+	<div id="disp"></div>
+
+	<hr>
+
+	Ajax( Asynchronus Javascript & XML )
+	- 자바스크립트를 이용한 백그라운드 통신 기술
+	<br>
+	Ajax를 사용하는 코딩은 model2 구조라고 볼 수 있다.
+	<br>
+	
+	model1 : - 서블릿 없이 jsp만 가지고 프로젝트를 만드는 것.<br>
+			 - 하나의 영역에서 화면구현, 입출력 모두 처리하는 형태<br>
+			 
+	model2 : - 구현 로직과 처리로직을 분리해서 작업하는 형태<br>
+	         - jsp에서는 화면 구현 및 요청작업을 수행하고, 서블릿에서 처리하는 형태로 분리
+		
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

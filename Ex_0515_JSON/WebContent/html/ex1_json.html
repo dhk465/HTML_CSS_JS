@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let p = {'name':'홍길동', 'age':'30', 'tel':'010-111-2222'};
+	document.write(`이름: ${p.name}<br>`);
+	document.write(`나이: ${p.age}<br>`);
+	document.write(`전번: ${p['tel']}<br>`);
+	
+	let sido = ['서울', '경기', '인천'];
+	document.write(`${sido[0]}<br>`);
+	
+	// json array
+	let p_array = [ {'name':'홍길동', 'age':'30'},
+					{'name':'김길동', 'age':'20'} ];
+	
+	for (let i = 0; i <p_array.length; i++) {
+		document.write(`${p_array[i].name}(${p_array[i].age})<br>`);
+	}
+	
+	let p3 = {	c1: ["김씨", "이씨"],
+				c2: ["박씨", "황씨"],
+				c3:	["오씨", "남씨"]};
+	
+	document.write(p3.c2[1]);
+	document.write(p3.c3[1]);
+	
+	document.write("<hr>");
+	
+	let course = {	'name':'웹개발3',
+					'start':'2018/03/01',
+					'end':'2018/03/01',
+					'sub':['java', 'jsp', 'android'],
+					'student':[ {'name':'홍길동', 'age':'20'},
+								{'name':'김길동', 'age':'30'}]
+	};
+	
+	document.write(`
+		과목명: ${course.name}<br>
+		시작: ${course.start}<br>
+		끝: ${course.end}<br>
+	`);
+	document.write(`<br>`);
+	for (let i = 0; i < course.sub.length; i++) {
+		document.write(`학생명: ${course.student[i].name} <br>`);
+		document.write(`과목명: ${course.student[i].age}<br>`);	
+	};
+	
+</script>
+</head>
+<body>
+	
+</body>
+</html>

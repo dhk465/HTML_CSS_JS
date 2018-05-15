@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/httpRequest.js"></script>
+<script>
+	window.onload = function(){
+		let url = "../jsp/movie_list_json.jsp";
+		sendRequest(url, null, resultFn, "GET");
+	};
+	
+	function resultFn() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			// 서버로 부터 ajax를 통한 로드 작업이 문제가 없다면 데이터를 가지고 온다.
+			let data = xhr.responseText;
+			//alert(data);
+			
+			// 받은 결과를 JSON객체로 묶어서 작업 할 수 있도록 처리
+			let json = eval(data);
+			
+			let movie_select = document.getElementById("movie_select");
+			for (let i = 0; i < json.length; i++) {
+				
+				let option = document.createElement("option");
+				
+				option.innerHTML = json[i].title;
+				option.value = json[i].path;
+				
+				movie_select.appendChild(option);
+				
+			} // for
+		} // if
+	} // resultFn()
+	
+	function movie_play() {
+		let path = document.getElementById("movie_select").value;
+		// alert(path);
+		
+		let my_video = document.getElementById("my_video");
+		my_video.src = path;
+		
+		my_video.play();
+	}
+</script>
+</head>
+<body>
+	자넬 모네 비디오 목록:
+	<select id="movie_select" onchange="movie_play();">
+		<option>:::재생할 비디오를 선택하세요:::</option>
+	</select>
+	
+	<hr>
+	
+	<video id="my_video" src=""
+	controls="controls"
+	width="320"
+	height="240">
+	</video>
+	
+</body>
+</html>
