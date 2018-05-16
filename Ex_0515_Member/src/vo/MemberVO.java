@@ -13,8 +13,7 @@ public class MemberVO {
 		
 	}
 	
-	public MemberVO(int idx, String name, String id, String pwd, String email, String addr) {
-		this.idx = idx;
+	public MemberVO(String id, String name, String pwd, String email, String addr) {
 		this.name = name;
 		this.id = id;
 		this.pwd = pwd;
