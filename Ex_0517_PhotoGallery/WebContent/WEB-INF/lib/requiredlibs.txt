@@ -1,0 +1,7 @@
+/Ex_0517_PhotoGallery/WebContent/WEB-INF/lib/commons-collections-3.2.1.jar
+/Ex_0517_PhotoGallery/WebContent/WEB-INF/lib/commons-dbcp-1.2.2.jar
+/Ex_0517_PhotoGallery/WebContent/WEB-INF/lib/commons-pool-1.4.jar
+/Ex_0517_PhotoGallery/WebContent/WEB-INF/lib/cos.jar
+/Ex_0517_PhotoGallery/WebContent/WEB-INF/lib/ojdbc6.jar
+/Ex_0517_PhotoGallery/WebContent/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar
+/Ex_0517_PhotoGallery/WebContent/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar

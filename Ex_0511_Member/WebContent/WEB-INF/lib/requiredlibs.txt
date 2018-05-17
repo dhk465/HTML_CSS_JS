@@ -1,0 +1,4 @@
+commons-collections-3.2.1.jar
+commons-dbcp-1.2.2.jar
+commons-pool-1.4.jar
+ojdbc6.jar

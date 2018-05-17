@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#main_box h1 {
+	text-align: center;
+	text-shadow: 3px 3px 5px #777;
+	color: #fff;
+}
+
+#main_box {
+	width: 800px;
+	margin: auto;
+}
+
+#photo_box {
+	width: 710px;
+	height: 665px;
+	border: 1px solid #00f;
+	padding: 10px;
+	margin: auto;
+	overflow: auto;
+}
+
+.photo_type {
+	width: 150px;
+	height: 200px;
+	border: 1px solid #0f0;
+	float: left;
+	margin: 10px;
+}
+
+.title {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.photo_type img {
+	display: block;
+	margin: auto;
+	width: 98%;
+	height: 150px;
+	border: 1px solid #f00;
+}
