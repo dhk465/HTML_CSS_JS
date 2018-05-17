@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="../js/httpRequest.js"></script>
+<script src="../js/regex.js"></script>
 <script>
 	let b_idCheck = false;
 
@@ -18,8 +19,31 @@
 		let addr = f.addr.value.trim();
 		
 		// TODO 유효성 체크
+		if (!reg_id.test(id)) {
+			alert("ID는 6에서 15자리사이의 영문과 숫자를 입력해주세요.");
+			f.id.focus();
+			return;
+		}
 		
-		if( !b_idCheck ){
+		if (!reg_pwd.test(pwd)) {
+			alert("비밀번호는 8자리이상의 문자이어야 하며 아래 형식에 맞게 입력하여 주세요.\r\n\r\n영문 대문자와 소문자 각 각 한개 이상\r\n숫자: 0123456789\r\n특수문자포함: !@#\$%\^&\*");
+			f.pwd.focus();
+			return;
+		}
+		
+		if (name == "") {
+			alert("이름을 입력하여 주세요.");
+			f.name.focus();
+			return;
+		}
+		
+		if (!reg_email.test(email)) {
+			alert("이메일의 형식에 맞게 입력하여 주십시오.");
+			f.email.focus();
+			return;
+		}
+		
+		if (!b_idCheck){
 			alert("아이디 중복체크를 먼저 하세요");
 			return;
 		}
@@ -109,7 +133,7 @@
 			<tr>
 				<th>이메일</th>
 				<td>
-					<input name="email">
+					<input type="email" name="email">
 				</td>
 			</tr>
 			<tr>
