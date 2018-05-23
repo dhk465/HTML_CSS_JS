@@ -6,6 +6,17 @@ public class ProductVO {
 	String category, p_num, p_name, p_company, 
 			p_image_s, p_image_l, p_content, p_date;
 	
+	private int sale_rate;
+	
+	public int getSale_rate() {
+		// (정가 - 할인가) / 정가 * 100
+		if (p_price == 0) {
+			return 0;
+		}
+		
+		return (int) ((p_price - p_saleprice) / (double) p_price * 100);
+	}
+	
 	public int getIdx() {
 		return idx;
 	}

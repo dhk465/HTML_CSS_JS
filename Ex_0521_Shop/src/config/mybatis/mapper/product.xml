@@ -4,6 +4,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="">
 
+	<select id="product_list"
+			parameterType="java.lang.String"
+			resultType="product">
+		select * from product where category=#{category}
+	</select>
+
+	<insert id="product_insert"
+			parameterType="product">
+		insert into product values(seq_pro_idx.nextVal, #{category}, #{p_num}, #{p_name}, #{p_company}, #{p_price}, #{p_saleprice}, #{p_image_s}, #{p_image_l}, #{p_content}, sysdate)
+	</insert>
 </mapper>
 
 
