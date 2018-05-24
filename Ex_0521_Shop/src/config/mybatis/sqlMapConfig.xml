@@ -6,6 +6,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 	<typeAliases>
 		<typeAlias type="vo.ProductVO" alias="product"/>
+		<typeAlias type="vo.CartVO" alias="cart"/>
 	</typeAliases>
 
 	<environments default="">
@@ -21,6 +22,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mappers>
 		<!-- 맵퍼를 준비해두면 나중에 쿼리문을 통해 자동으로 객체화 해 준다. -->
 		<mapper resource="config/mybatis/mapper/product.xml" />
+		<mapper resource="config/mybatis/mapper/cart.xml" />
 	</mappers>
 </configuration>
 

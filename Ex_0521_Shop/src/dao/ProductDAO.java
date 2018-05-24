@@ -55,6 +55,16 @@ public class ProductDAO {
 		return cnt;
 		
 	}
+	
+	public ProductVO selectOne(int idx) {
+		ProductVO vo = null;
+		
+		SqlSession sqlSession = factory.openSession();
+		vo = sqlSession.selectOne("product_one", idx);
+		sqlSession.close();
+		
+		return vo;
+	}
 	 
 	
 }

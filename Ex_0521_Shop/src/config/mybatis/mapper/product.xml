@@ -14,6 +14,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			parameterType="product">
 		insert into product values(seq_pro_idx.nextVal, #{category}, #{p_num}, #{p_name}, #{p_company}, #{p_price}, #{p_saleprice}, #{p_image_s}, #{p_image_l}, #{p_content}, sysdate)
 	</insert>
+	
+	<!-- idx에 해당하는 상품정보 한 건 가져오기 -->
+	<select id="product_one" parameterType="int" resultType="product">
+		select * from product where idx=#{idx}
+	</select>
 </mapper>
 
 
