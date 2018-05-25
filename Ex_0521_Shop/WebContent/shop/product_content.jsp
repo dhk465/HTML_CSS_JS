@@ -18,6 +18,18 @@
 	function resultFn() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			
+			let data = xhr.responseText;
+			let json = eval(data);
+			
+			if (json[0].result == 'yes') {
+				alert("장바구니에 담았습니다.");
+				if (!confirm("장바구니로 이동하시겠습니까?")) {
+					return;
+				}
+				location.href="cart_list.do";
+			}else{
+				alert("같은 상품이 이미 장바구니에 담겨져 있습니다.");
+			}
 		}
 	}
 </script>

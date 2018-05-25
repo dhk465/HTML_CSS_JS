@@ -35,6 +35,9 @@ public class CartInsertAction extends HttpServlet {
 			CartDAO.getInstance().insert(vo);
 		}
 		
+		String resultStr = String.format("[{'result':'%s'}]", duplicate);
+		response.getWriter().println( resultStr );
+		
 	}
 
 }

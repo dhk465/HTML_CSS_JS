@@ -29,6 +29,7 @@ public class CartDAO {
 		factory = MyBatisConnector.getInstance().getSqlSessionFactory();
 	}
 	
+	
 	// 회원별 장바구니 목록
 	public List<CartVO> select(int m_idx) {
 		
@@ -70,6 +71,18 @@ public class CartDAO {
 		return total;
 	}
 	
+	// 장바구니에 중복된 항목이 없다면 새 항목 추가
+	public int insert(CartVO vo) {
+		SqlSession sqlSession = factory.openSession(true);
+		
+		int res = sqlSession.insert("cart_insert", vo);
+		
+		sqlSession.close();
+		
+		return res;
+		
+	}
+	
 	// 상품 갯수, 번호, 고객 번호를 파라미터로 받아서 수정
 	public int update_cnt(int c_idx, int c_cnt) {
 		SqlSession sqlSession = factory.openSession(true); // 커밋을 하지 않아도 되게 true로 설정
@@ -100,5 +113,7 @@ public class CartDAO {
 		
 		return res;
 	}
+	
+	
 	
 }

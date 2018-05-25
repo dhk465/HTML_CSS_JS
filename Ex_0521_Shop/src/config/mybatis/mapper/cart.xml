@@ -20,6 +20,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select nvl(sum(amount), 0) from cart_view where m_idx = #{m_idx}
 	</select>
 	
+	<insert id="cart_insert" parameterType="cart">
+		insert into cart values(seq_cart_idx.nextVal, 1, #{p_idx}, #{m_idx})
+	</insert>
+	
 	<!-- 수량 업데이트 -->
 	<update id="cart_cnt_update" parameterType="java.util.HashMap">
 		update cart set c_cnt=#{c_cnt} where c_idx=#{c_idx}
